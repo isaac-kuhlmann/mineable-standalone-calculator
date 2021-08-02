@@ -62,24 +62,23 @@ const calculateRewards = (tokens) => {
         let alphaDaily = alphaReward(tokens, btcPrice)
         let betaDaily = betaReward(tokens, btcPrice)
 
-        document.getElementById('result').innerText = 
+        document.getElementById('alpha').innerText = 
             'Alpha Daily USD: $' + alphaDaily.usd.toFixed(2) + '\n' +
             'Alpha Daily BTC: ' + alphaDaily.btc.toFixed(8) + ' BTC\n\n' +
-            'Beta Daily USD: $' + betaDaily.usd.toFixed(2) + '\n' +
-            'Beta Daily BTC: ' + betaDaily.btc.toFixed(8) + ' BTC\n\n' +
             'Alpha Weekly USD: $' + (alphaDaily.usd * 7).toFixed(2) + '\n' +
             'Alpha Weekly BTC: ' + (alphaDaily.btc * 7).toFixed(8) + ' BTC\n\n' +
+            'Alpha Monthly USD: $' + (alphaDaily.usd * 30).toFixed(2) + '\n' +
+            'Alpha Monthly BTC: ' + (alphaDaily.btc * 30).toFixed(8) + ' BTC\n\n';
+
+        document.getElementById('beta').innerText =
+            'Beta Daily USD: $' + betaDaily.usd.toFixed(2) + '\n' +
+            'Beta Daily BTC: ' + betaDaily.btc.toFixed(8) + ' BTC\n\n' +
+
             'Beta Weekly USD: $' + (betaDaily.usd * 7).toFixed(2) + '\n' +
             'Beta Weekly BTC: ' + (betaDaily.btc * 7).toFixed(8) + ' BTC\n\n' +
-            'Alpha Monthly USD: $' + (alphaDaily.usd * 30).toFixed(2) + '\n' +
-            'Alpha Monthly BTC: ' + (alphaDaily.btc * 30).toFixed(8) + ' BTC\n\n' +
-            'Beta Monthly USD: $' + (betaDaily.usd * 30).toFixed(2) + '\n' +
-            'Beta Monthly BTC: ' + (betaDaily.btc * 30).toFixed(8) + ' BTC\n\n' +
-            'Alpha Yearly USD: $' + (alphaDaily.usd * 365).toFixed(2) + '\n' +
-            'Alpha Yearly BTC: ' + (alphaDaily.btc * 365).toFixed(8) + ' BTC\n\n' +
-            'Beta Yearly USD: $' + (betaDaily.usd * 365).toFixed(2) + '\n' +
-            'Beta Yearly BTC: ' + (betaDaily.btc * 365).toFixed(8) + ' BTC\n\n'
 
+            'Beta Monthly USD: $' + (betaDaily.usd * 30).toFixed(2) + '\n' +
+            'Beta Monthly BTC: ' + (betaDaily.btc * 30).toFixed(8) + ' BTC\n\n';
         // The following is just logging the rewards
         // Log Daily Rewards
         console.log('Alpha Daily USD: ' + alphaDaily.usd)
